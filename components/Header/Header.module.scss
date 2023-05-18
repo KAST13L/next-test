@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  background: darkgray;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+
+  .linksList{
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+  }
+}
