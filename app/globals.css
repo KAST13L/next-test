@@ -17,4 +17,11 @@ a {
 
 .container {
     text-align: center;
+    padding-bottom: 60px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
