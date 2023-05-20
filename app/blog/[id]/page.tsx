@@ -8,6 +8,7 @@ async function getPost(id: string) {
 type Props = {
   params: {
     id: string;
+
   };
 };
 
