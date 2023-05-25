@@ -28,3 +28,12 @@ a:hover{
     justify-content: center;
     align-items: center;
 }
+button{
+    text-decoration: none;
+    font-size: 20px;
+    background: burlywood;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
