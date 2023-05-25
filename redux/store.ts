@@ -21,5 +21,3 @@ setupListeners(store.dispatch);
 export type RootStateType = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
 
-// @ts-ignore
-window.store = store;
