@@ -1,5 +1,4 @@
-import { ThunkDispatch } from "redux-thunk";
-import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { counterReducer } from "@/redux/features/counterSlice";
 import { userApi } from "@/redux/services/userApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
@@ -20,4 +19,3 @@ setupListeners(store.dispatch);
 
 export type RootStateType = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
-
