@@ -1,7 +1,10 @@
 import { ThunkDispatch } from "redux-thunk";
-import { configureStore } from "@reduxjs/toolkit";
+import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
+import { todosReducer } from "@/app/todos/todos.reducer";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  todos: todosReducer,
+});
 
 export const store = configureStore({
   reducer: rootReducer,
