@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { placeholderApi } from "@/redux/services/api";
 
 type User = {
   id: number;
@@ -6,12 +6,7 @@ type User = {
   email: number;
 };
 
-export const userApi = createApi({
-  reducerPath: "userApi",
-  refetchOnFocus: true,
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://jsonplaceholder.typicode.com/",
-  }),
+export const userApi = placeholderApi.injectEndpoints({
   endpoints: (builder) => ({
     getUsers: builder.query<User[], null>({
       query: () => "users",
@@ -22,4 +17,4 @@ export const userApi = createApi({
   }),
 });
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = userApi;
+export const { useGetUserByIdQuery, useGetUsersQuery } = userApi;
