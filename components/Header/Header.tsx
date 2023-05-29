@@ -1,14 +1,18 @@
 import React from "react";
-import Link from "next/link";
 import s from "@/components/Header/Header.module.scss";
+import { Navigation } from "@/components/Header/Navigation/Navigation";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "todos", href: "/todos" },
+];
 export const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.linksList}>
-        <Link href={"/"}>Home</Link>
-        <Link href={"/about"}>About</Link>
-        <Link href={"/blog"}>Blog</Link>
-        <Link href={"/todos"}>Todos</Link>
+        <Navigation navLinks={navItems} />
       </div>
     </header>
   );
