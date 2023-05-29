@@ -1,5 +1,12 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import { Posts } from "@/components/Posts/Posts";
+
+export type PostType = {
+  id: number;
+  userId: number;
+  title: string;
+  body: string;
+};
 
 async function getData() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -19,13 +26,7 @@ export default async function Blog() {
   return (
     <>
       <h1>Blog page</h1>
-      <ul style={{ textAlign: "start" }}>
-        {posts.map((p: any) => (
-          <li key={p.id}>
-            <Link href={`/blog/${p.id}`}>{p.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <Posts posts={posts} />
     </>
   );
 }
