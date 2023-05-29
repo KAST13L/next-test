@@ -37,3 +37,18 @@ button{
     padding: 10px;
     margin: 5px;
 }
+button:hover{
+    background: #eecfae;
+}
+input{
+    text-decoration: none;
+    font-size: 20px;
+    background: burlywood;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+}
+input:hover{
+    background: #eecfae;
+}
