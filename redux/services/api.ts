@@ -17,3 +17,19 @@ export const myselfDbApi = createApi({
   }),
   endpoints: () => ({}),
 });
+
+export async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    next: {
+      revalidate: 60,
+    },
+  });
+  return res.json();
+}
+
+export async function getPostsBySearch(search: string) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?q=${search}`
+  );
+  return res.json();
+}

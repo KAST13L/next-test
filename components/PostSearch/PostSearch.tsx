@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEventHandler, useState } from "react";
-import { getPostsBySearch } from "@/app/blog/page";
+import { getPostsBySearch } from "@/redux/services/api";
 
 type Props = {
   onSearch: any;

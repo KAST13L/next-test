@@ -2,6 +2,7 @@
 import { Posts } from "@/components/Posts/Posts";
 import { useEffect, useState } from "react";
 import { PostSearch } from "@/components/PostSearch/PostSearch";
+import { getData } from "@/redux/services/api";
 
 export type PostType = {
   id: number;
@@ -9,22 +10,6 @@ export type PostType = {
   title: string;
   body: string;
 };
-
-async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    next: {
-      revalidate: 60,
-    },
-  });
-  return res.json();
-}
-
-export async function getPostsBySearch(search: string) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?q=${search}`
-  );
-  return res.json();
-}
 
 /*export const metadata: Metadata = {
   title: "Blog | Next JS App",
