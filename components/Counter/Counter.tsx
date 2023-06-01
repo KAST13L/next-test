@@ -23,59 +23,63 @@ export const Counter = () => {
         <button onClick={() => reset()}>reset</button>
       </div>
 
-      {error ? (
-        <p>Oh no, there was an error</p>
-      ) : isLoading || isFetching ? (
-        <p>Loading...</p>
-      ) : data ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
-            gap: 20,
-          }}
-        >
-          {data.map((user) => (
-            <div
-              key={user.id}
-              style={{ border: "1px solid #ccc", textAlign: "center" }}
-            >
-              <img
-                src={`https://robohash.org/${user.id}?set=set2&size=180x180`}
-                alt={user.name}
-                style={{ height: 180, width: 180 }}
-              />
-              <h3>{user.name}</h3>
-            </div>
-          ))}
-        </div>
-      ) : null}
+      <>
+        {error ? (
+          <p>Oh no, there was an error</p>
+        ) : isLoading || isFetching ? (
+          <p>Loading...</p>
+        ) : data ? (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
+              gap: 20,
+            }}
+          >
+            {data.map((user) => (
+              <div
+                key={user.id}
+                style={{ border: "1px solid #ccc", textAlign: "center" }}
+              >
+                <img
+                  src={`https://robohash.org/${user.id}?set=set2&size=180x180`}
+                  alt={user.name}
+                  style={{ height: 180, width: 180 }}
+                />
+                <h3>{user.name}</h3>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </>
 
-      {todos.error ? (
-        <p>Oh no, there was an error</p>
-      ) : todos.isLoading || todos.isFetching ? (
-        <p>Loading...</p>
-      ) : todos.data ? (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 20,
-            padding: "20px",
-            margin: "20px",
-          }}
-        >
-          {todos.data.map((todo) => (
-            <div
-              key={todo.id}
-              style={{ border: "1px solid #ccc", textAlign: "center" }}
-            >
-              <input type="checkbox" checked={todo.completed} />
-              <h3>{todo.title}</h3>
-            </div>
-          ))}
-        </div>
-      ) : null}
+      <>
+        {todos.error ? (
+          <p>Oh no, there was an error</p>
+        ) : todos.isLoading || todos.isFetching ? (
+          <p>Loading...</p>
+        ) : todos.data ? (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gap: 20,
+              padding: "20px",
+              margin: "20px",
+            }}
+          >
+            {todos.data.map((todo) => (
+              <div
+                key={todo.id}
+                style={{ border: "1px solid #ccc", textAlign: "center" }}
+              >
+                <input type="checkbox" checked={todo.completed} />
+                <h3>{todo.title}</h3>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </>
     </main>
   );
 };

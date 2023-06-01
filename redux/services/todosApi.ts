@@ -11,7 +11,14 @@ export const todosApi = myselfDbApi.injectEndpoints({
     getTodos: builder.query<TodoType[], null>({
       query: () => "todos",
     }),
+    createTodo: builder.mutation({
+      query: (todo) => ({
+        body: todo,
+        url: "todos",
+        method: "POST",
+      }),
+    }),
   }),
 });
 
-export const { useGetTodosQuery } = todosApi;
+export const { useGetTodosQuery, useCreateTodoMutation } = todosApi;
