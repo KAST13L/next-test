@@ -6,7 +6,7 @@ const defaultValue = {
   title: "",
   author: "",
   completed: false,
-  id: random(1).toString(),
+  id: "",
 };
 
 export const CreateTodo = () => {
@@ -16,7 +16,7 @@ export const CreateTodo = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    createTodo(todo).then(() => {
+    createTodo({ ...todo, id: random(3).toString() }).then(() => {
       setTodo(defaultValue);
     });
   };

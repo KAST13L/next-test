@@ -10,6 +10,11 @@ export const todosApi = myselfDbApi.injectEndpoints({
   endpoints: (builder) => ({
     getTodos: builder.query<TodoType[], null>({
       query: () => "todos",
+      providesTags: () => [
+        {
+          type: "todo",
+        },
+      ],
     }),
     createTodo: builder.mutation({
       query: (todo) => ({
@@ -17,6 +22,11 @@ export const todosApi = myselfDbApi.injectEndpoints({
         url: "todos",
         method: "POST",
       }),
+      invalidatesTags: () => [
+        {
+          type: "todo",
+        },
+      ],
     }),
   }),
 });

@@ -2,7 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const placeholderApi = createApi({
   reducerPath: "placeholderApi",
-  refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
   }),
@@ -11,7 +10,7 @@ export const placeholderApi = createApi({
 
 export const myselfDbApi = createApi({
   reducerPath: "myselfDbApi",
-  refetchOnFocus: true,
+  tagTypes: ["todo"],
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:4200/",
   }),

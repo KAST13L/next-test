@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { counterReducer } from "@/redux/features/counterSlice";
 import { userApi } from "@/redux/services/userApi";
-import { setupListeners } from "@reduxjs/toolkit/query";
 import { todosApi } from "@/redux/services/todosApi";
 
 const rootReducer = combineReducers({
@@ -15,8 +14,6 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({}).concat([userApi.middleware, todosApi.middleware]),
 });
-
-setupListeners(store.dispatch);
 
 export type RootStateType = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
