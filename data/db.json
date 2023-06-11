@@ -1,47 +1,52 @@
 {
   "todos": [
     {
-      "userId": 1,
-      "author":"Semi",
-      "id": 1,
+      "author": "Semi",
       "title": "work and travel",
       "completed": false
     },
     {
-      "userId": 2,
-      "author":"Semi",
-      "id": 2,
+      "author": "Semi",
       "title": "fix bag",
       "completed": false
     },
     {
-      "userId": 3,
-      "author":"Semi",
-      "id": 3,
+      "author": "Semi",
       "title": "feat new",
       "completed": true
     },
     {
-      "userId": 4,
-      "author":"Semi",
-      "id": 4,
+      "author": "Semi",
       "title": "he did not want to play with me",
       "completed": false
     },
     {
-      "userId": 5,
-      "author":"Semi",
-      "id": 5,
+      "author": "Semi",
       "title": "feat project c",
       "completed": true
     },
     {
-      "userId": 6,
-      "author":"Semi",
-      "id": 6,
+      "author": "Semi",
       "title": "he did i can",
       "completed": false
+    },
+    {
+      "title": "res",
+      "author": "asd",
+      "completed": false,
+      "id": "40,59,60,150,172,126,10,18,250,148"
+    },
+    {
+      "title": "zxc",
+      "author": "zxc",
+      "completed": false,
+      "id": "134,83,154,234,186,231,210,59,176,108"
     }
   ],
-  "ids": [1,2,3,4]
+  "ids": [
+    1,
+    2,
+    3,
+    4
+  ]
 }

@@ -1,10 +1,10 @@
 import { myselfDbApi } from "@/redux/services/api";
 
 export type TodoType = {
-  userId: number;
-  id: number;
   title: string;
   completed: boolean;
+  author: string;
+  id: string;
 };
 export const todosApi = myselfDbApi.injectEndpoints({
   endpoints: (builder) => ({

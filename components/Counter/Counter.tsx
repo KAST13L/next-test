@@ -4,13 +4,11 @@ import { useGetUsersQuery } from "@/redux/services/userApi";
 import { useAppSelector } from "@/redux/hooks/hooks";
 import { useActions } from "@/redux/hooks/useActions";
 import { counterActions } from "@/redux/features/counterSlice";
-import { useGetTodosQuery } from "@/redux/services/todosApi";
 
 export const Counter = () => {
   const count = useAppSelector((state) => state.counter.value);
   const { reset, increment, decrement } = useActions(counterActions);
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
-  const todos = useGetTodosQuery(null);
 
   return (
     <main style={{ maxWidth: 1200, marginInline: "auto", padding: 20 }}>
@@ -47,34 +45,6 @@ export const Counter = () => {
                   style={{ height: 180, width: 180 }}
                 />
                 <h3>{user.name}</h3>
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </>
-
-      <>
-        {todos.error ? (
-          <p>Oh no, there was an error</p>
-        ) : todos.isLoading || todos.isFetching ? (
-          <p>Loading...</p>
-        ) : todos.data ? (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              gap: 20,
-              padding: "20px",
-              margin: "20px",
-            }}
-          >
-            {todos.data.map((todo) => (
-              <div
-                key={todo.id}
-                style={{ border: "1px solid #ccc", textAlign: "center" }}
-              >
-                <input type="checkbox" checked={todo.completed} />
-                <h3>{todo.title}</h3>
               </div>
             ))}
           </div>

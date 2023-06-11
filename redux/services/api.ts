@@ -28,8 +28,6 @@ export async function getData() {
 }
 
 export async function getPostsBySearch(search: string) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?q=${search}`
-  );
+  const res = await fetch(`https://api.tvmaze.com/search/shows?q=${search}`);
   return res.json();
 }
